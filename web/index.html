@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Auction</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- CSPR.click draws its wallet dialogs here. Keep it, and keep #root next to it. -->
+    <div id="csprclick-ui"></div>
+    <div id="root">
+      <header>
+        <h1>Daily Auction</h1>
+        <div class="account">
+          <span id="network" class="tag"></span>
+          <a id="account" target="_blank" rel="noopener noreferrer"></a>
+          <button id="connect">Connect wallet</button>
+          <button id="disconnect" class="quiet" hidden>Disconnect</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="card">
+          <p class="label">Round <span id="round">…</span> ends in</p>
+          <p id="countdown" class="big">…</p>
+          <dl>
+            <dt>Highest bid</dt>
+            <dd id="highest-bid">…</dd>
+            <dt>Highest bidder</dt>
+            <dd id="highest-bidder">…</dd>
+            <dt>Minimum bid</dt>
+            <dd id="min-bid">…</dd>
+          </dl>
+          <form id="bid-form">
+            <input id="amount" inputmode="decimal" placeholder="Your bid in CSPR" autocomplete="off" />
+            <button type="submit">Place bid</button>
+          </form>
+          <p class="hint">
+            If someone outbids you, your CSPR comes back to your account in the same transaction.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Finished rounds</h2>
+          <ul id="history"><li class="muted">Loading…</li></ul>
+          <button id="settle" class="quiet">Settle the last round</button>
+        </section>
+
+        <p id="status" role="status"></p>
+      </main>
+
+      <footer>
+        Contract: <a id="contract-link" target="_blank" rel="noopener noreferrer"></a>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

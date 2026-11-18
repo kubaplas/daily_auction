@@ -1,0 +1,15 @@
+.idea
+.vscode
+/target
+Cargo.lock
+.backend*
+.builder*
+/wasm
+.env
+*.env
+secret_key*.pem
+keys/
+
+# generated contract client: build output
+/*_client/target
+/*_client/pkg-web

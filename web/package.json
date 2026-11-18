@@ -1,0 +1,18 @@
+{
+  "name": "daily_auction-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "contract-client": "file:../daily_auction_client/pkg-web"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}

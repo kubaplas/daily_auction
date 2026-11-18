@@ -1,0 +1,6 @@
+last_updated = "2026-11-16T13:02:05Z"
+
+[[contracts]]
+name = "DailyAuction"
+package_name = "DailyAuction"
+package_hash = "hash-85261f49f18ff74adb4bf027516770e3ff126498d85d4dc4626898dbd0a567f6"

@@ -1,0 +1,30 @@
+[package]
+description = "Wasm client"
+edition = "2021"
+name = "daily-auction-wasm-client"
+
+[dependencies]
+odra-wasm-client = { version = "^2.10.1", default-features = false }
+odra-core = { version = "^2.10.1", default-features = false }
+odra-wasm-client-builder = { version = "^2.10.1", optional = true, default-features = false }
+serde = { version = "1.0.195", default-features = false }
+serde_json = { version = "1.0.113", default-features = false }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "daily_auction_wasm_client"
+path = "src/lib.rs"
+
+[features]
+client = []
+codegen = ["odra-wasm-client-builder"]
+default = ["client"]
+
+[[bin]]
+name = "codegen"
+path = "src/main.rs"
+required-features = ["codegen"]
+
+# Local copy of odra-wasm-client with the read fixes of odradev/odra#716, until Odra 2.11 is released.
+[patch.crates-io]
+odra-wasm-client = { path = "/tmp/claude-1000/-home-kuba-Projekty-odra-odra/1463bd78-f2af-4b28-98e2-a8f76bb9670c/scratchpad/owc" }
